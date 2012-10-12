@@ -1,0 +1,21 @@
+# enable arrows for searching through history
+# e.g. you can type "make [up arrow]" and it will
+# show you the last make command
+"\C-[[A": history-search-backward
+"\C-[[B": history-search-forward
+
+# attempt to preserve cursor position when scrolling through history
+set history-preserve-point on
+
+# ignore case when completing filenames
+set completion-ignore-case on
+set show-all-if-ambiguous on
+set show-all-if-unmodified on
+
+# e.g. if cursor is at Make_file, don't complete to Makefilefile
+set skip-completed-text on
+
+# expand tilde on completion
+set expand-tilde on
+
+Space: magic-space
