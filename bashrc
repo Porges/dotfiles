@@ -18,6 +18,7 @@ shopt -s histappend
 PROMPT_COMMAND='history -a'
 
 # must ctrl-D twice to exit
+set -o ignoreeof
 export IGNOREEOF=1
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
@@ -117,4 +118,8 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
+fi
+
+if [ -x /usr/games/fortune ]; then
+    /usr/games/fortune -a
 fi
