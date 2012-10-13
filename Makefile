@@ -6,10 +6,11 @@ home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 
 .PHONY: install-solarized-theme
 
+install: $(home-dotfiles) install-solarized-theme
+
 install-solarized-theme:
 	gnome-terminal-colors-solarized/set_dark.sh
 
-install: $(home-dotfiles) install-solarized-theme
 
 $(HOME)/.%: %
 	[ ! -e $@ -o -L $@ ]
