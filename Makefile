@@ -1,10 +1,15 @@
 # based upon github.com/sanpii/my-dotfiles
 
-dotfiles = $(filter-out README.md Makefile, $(wildcard *))
+dotfiles = $(filter-out README.md Makefile gnome-terminal-colors-solarized, $(wildcard *))
 
 home-dotfiles = $(addprefix $(HOME)/.,$(dotfiles))
 
-install: $(home-dotfiles)
+.PHONY: install-solarized-theme
+
+install-solarized-theme:
+	gnome-terminal-colors-solarized/set_dark.sh
+
+install: $(home-dotfiles) install-solarized-theme
 
 $(HOME)/.%: %
 	[ ! -e $@ -o -L $@ ]

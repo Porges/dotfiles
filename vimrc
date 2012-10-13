@@ -7,6 +7,8 @@ set shiftround
 set smartindent
 set autoindent
 
+set hidden
+
 " vundle config
 filetype off
 set rtp+=~/.vim/bundle/vundle
@@ -15,13 +17,17 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'SuperTab'
+Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin indent on
 " end vundle
 
-syntax on
+syntax enable
 
 set bg=dark
+"let g:solarized_termcolors=256
+set t_Co=16
+colorscheme solarized
 
 set mouse=a
 
