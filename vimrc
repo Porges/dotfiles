@@ -1,8 +1,11 @@
+set nocompatible
+
 set expandtab    " spaces for tabs
 set tabstop=4    " tab inserts this many
 set softtabstop=4
 set shiftwidth=4 " >> inserts this many
 set shiftround
+set smarttab
 
 set smartindent
 set autoindent
@@ -22,7 +25,7 @@ Bundle 'altercation/vim-colors-solarized'
 filetype plugin indent on
 " end vundle
 
-syntax enable
+syntax on
 
 set bg=dark
 "let g:solarized_termcolors=256
