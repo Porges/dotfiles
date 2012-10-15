@@ -10,3 +10,5 @@ alias cd....='cd ../../..'
 
 # preserve colour codes
 alias less='less -r'
+
+alias ls='ls --color=always'
