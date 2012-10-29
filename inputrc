@@ -20,7 +20,7 @@ set skip-completed-text on
 # expand tilde on completion
 set expand-tilde on
 
-Space: magic-space
+#Space: magic-space
 # /etc/inputrc - global inputrc for libreadline
 # See readline(3readline) and `info rluserman' for more information.
 
