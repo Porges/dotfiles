@@ -16,7 +16,7 @@ $(HOME)/.%: %
 	$(RM) $@
 	ln -s $(CURDIR)/$* $@
 
-$(HOME)/.Xresources: solarized/xresources-colors-solarized/Xresources
+$(HOME)/.Xresources: solarized/xresources/solarized
 	[ ! -e $@ -o -L $@ ]
 	$(RM) $@
 	ln -s $(CURDIR)/$^ $@
