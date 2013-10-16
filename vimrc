@@ -12,25 +12,29 @@ set autoindent
 
 set hidden
 
-" vundle config
-filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
+if has("win32")
+	set guifont=Source_Code_Pro:h10:cANSI
+else
+	" vundle config
+	filetype off
+	set rtp+=~/.vim/bundle/vundle
+	call vundle#rc()
 
-Bundle 'gmarik/vundle'
+	Bundle 'gmarik/vundle'
 
-Bundle 'SuperTab'
-Bundle 'altercation/vim-colors-solarized'
+	Bundle 'SuperTab'
+	Bundle 'altercation/vim-colors-solarized'
+
+	set bg=dark
+	"let g:solarized_termcolors=256
+	set t_Co=16
+	colorscheme solarized
+endif
 
 filetype plugin indent on
 " end vundle
 
 syntax on
-
-set bg=dark
-"let g:solarized_termcolors=256
-set t_Co=16
-colorscheme solarized
 
 set mouse=a
 
