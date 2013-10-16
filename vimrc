@@ -42,3 +42,6 @@ set showcmd
 set hlsearch
 set incsearch
 set smartcase " ignore case unless some uppercase letters present
+
+set relativenumber " show numbers as relative to current line
+set number
