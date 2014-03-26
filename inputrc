@@ -18,7 +18,7 @@ set blink-matching-paren on
 set skip-completed-text on
 
 # expand tilde on completion
-set expand-tilde on
+# set expand-tilde on
 
 #Space: magic-space
 # /etc/inputrc - global inputrc for libreadline

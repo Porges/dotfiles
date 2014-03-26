@@ -22,13 +22,19 @@ else
 
 	Bundle 'gmarik/vundle'
 
-	Bundle 'SuperTab'
-	Bundle 'altercation/vim-colors-solarized'
+	"Bundle 'SuperTab'
 
-	set bg=dark
-	"let g:solarized_termcolors=256
+    Bundle 'sickill/vim-monokai'
+    Bundle 'travitch/hasksyn'
+    Bundle 'scrooloose/syntastic'
+    "Bundle 'Shougo/neocomplcache.vim'
+    Bundle 'ujihisa/neco-ghc'
+
+    Bundle 'kien/ctrlp.vim'
+    Bundle 'kniren/haskellmode-vim'
+
 	set t_Co=16
-	colorscheme solarized
+    colorscheme monokai
 endif
 
 filetype plugin indent on
@@ -47,5 +53,14 @@ set hlsearch
 set incsearch
 set smartcase " ignore case unless some uppercase letters present
 
+set cursorline
 set relativenumber " show numbers as relative to current line
 set number
+
+let g:haddock_browser="/usr/bin/firefox"
+au BufEnter *.hs compiler ghc
+
+let g:neocomplcache_enable_at_startup = 1
+
+let g:syntastic_error_symbol = '►'
+let g:syntastic_warning_symbol = '▻'

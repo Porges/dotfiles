@@ -130,4 +130,3 @@ if [ -x /usr/games/fortune ]; then
     /usr/games/fortune -a
 fi
 
-eval `dircolors ~/dotfiles/dircolors-solarized/dircolors.256dark`
