@@ -1,0 +1,41 @@
+set nocompatible
+
+set expandtab    " spaces for tabs
+set tabstop=4    " tab inserts this many
+set softtabstop=4
+set shiftwidth=4 " >> inserts this many
+set shiftround
+set smarttab
+
+set smartindent
+set autoindent
+
+set hidden
+
+if has("win32")
+	set guifont=Source_Code_Pro:h10:cANSI
+endif
+
+filetype plugin indent on
+
+syntax on
+
+set mouse=a
+
+set wildmenu
+set wildmode=longest:full
+
+set showcmd
+
+set hlsearch
+set incsearch
+set smartcase " ignore case unless some uppercase letters present
+
+set cursorline
+set relativenumber " show numbers as relative to current line
+set number
+
+set formatoptions+=n
+
+" spellcheck vim commits
+autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
