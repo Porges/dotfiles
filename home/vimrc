@@ -1,5 +1,6 @@
 set nocompatible
 
+set autoread     " reload files if changed outside and no changes inside
 set expandtab    " spaces for tabs
 set tabstop=4    " tab inserts this many
 set softtabstop=4
@@ -10,20 +11,26 @@ set smarttab
 set smartindent
 set autoindent
 
+set backspace=indent,eol,start
+
 set hidden
 
 if has("win32")
-	set guifont=Source_Code_Pro:h10:cANSI
+    set guifont=Source_Code_Pro:h10:cANSI
 endif
 
 filetype plugin indent on
-
 syntax on
+set showmatch
 
 set mouse=a
 
 set wildmenu
 set wildmode=longest:full
+set wildignorecase " ignore case for filenames
+
+set splitbelow
+set splitright
 
 set showcmd
 
@@ -45,3 +52,7 @@ noremap <Right> <NOP>
 
 " spellcheck vim commits
 autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
+
+" Move visual block: http://vimrcfu.com/snippet/77
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
