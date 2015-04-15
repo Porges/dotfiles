@@ -37,5 +37,11 @@ set number
 
 set formatoptions+=n
 
+" disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
 " spellcheck vim commits
 autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
