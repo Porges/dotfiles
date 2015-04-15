@@ -1,0 +1,9 @@
+[user]
+	email = porges@porg.es
+	name = George Pollard
+[core]
+	editor = vim
+	preloadindex = true
+	fscache = true
+[branch]
+	autosetuprebase = always
