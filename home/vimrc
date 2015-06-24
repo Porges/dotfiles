@@ -42,7 +42,7 @@ set incsearch
 set smartcase " ignore case unless some uppercase letters present
 
 set cursorline
-set relativenumber " show numbers as relative to current line
+"set relativenumber " show numbers as relative to current line
 set number
 
 set formatoptions+=n
