@@ -19,6 +19,8 @@ if has("win32")
     set guifont=Consolas:h9:cANSI
 endif
 
+set guioptions-=T
+
 filetype plugin indent on
 syntax on
 set showmatch
