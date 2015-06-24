@@ -27,6 +27,7 @@ set mouse=a
 
 set wildmenu
 set wildmode=longest:full
+set completeopt=longest,menuone
 set wildignorecase " ignore case for filenames
 
 set splitbelow
