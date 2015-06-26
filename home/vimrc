@@ -74,3 +74,6 @@ colorscheme xoria256
 
 " Ignore build output dirs (for both vim and ctrl-p)
 set wildignore+=*\\bin\\*,*\\obj\\*,*\\objd\\*,*\\out\\*
+
+" Custom filetypes
+au Bufread,BufNewFile *.targets,*.props,*.proj setfiletype xml " Msbuild
