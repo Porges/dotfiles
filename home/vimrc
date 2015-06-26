@@ -19,7 +19,7 @@ set backspace=indent,eol,start
 set hidden
 
 if has("win32")
-    set guifont=Consolas:h9:cANSI
+    set guifont=Input:h9:cANSI
 endif
 
 set guioptions-=T
@@ -63,3 +63,9 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 " Move visual block: http://vimrcfu.com/snippet/77
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+" Setup for airline
+set encoding=utf-8
+let g:airline_powerline_fonts=1
+set laststatus=2
+" show status always
+
