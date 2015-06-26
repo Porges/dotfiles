@@ -71,3 +71,6 @@ set laststatus=2
 
 colorscheme xoria256
 
+
+" Ignore build output dirs (for both vim and ctrl-p)
+set wildignore+=*\\bin\\*,*\\obj\\*,*\\objd\\*,*\\out\\*
