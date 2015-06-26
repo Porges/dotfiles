@@ -1,5 +1,8 @@
 set nocompatible
 
+" Enable pathogen
+execute pathogen#infect()
+
 set autoread     " reload files if changed outside and no changes inside
 set expandtab    " spaces for tabs
 set tabstop=4    " tab inserts this many
