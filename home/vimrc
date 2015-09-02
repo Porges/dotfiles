@@ -1,6 +1,7 @@
 set nocompatible
 
 " Enable pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
 set autoread     " reload files if changed outside and no changes inside
