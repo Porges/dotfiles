@@ -10,3 +10,9 @@
 [submodule "vimfiles/bundle/xoria256.vim"]
 	path = vimfiles/bundle/xoria256.vim
 	url = https://github.com/vim-scripts/xoria256.vim
+[submodule "vimfiles/bundle/ctrlp.vim"]
+	path = vimfiles/bundle/ctrlp.vim
+	url = https://github.com/kien/ctrlp.vim
+[submodule "vimfiles/bundle/supertab"]
+	path = vimfiles/bundle/supertab
+	url = https://github.com/ervandew/supertab
