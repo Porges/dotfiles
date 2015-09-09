@@ -16,3 +16,6 @@
 [submodule "vimfiles/bundle/supertab"]
 	path = vimfiles/bundle/supertab
 	url = https://github.com/ervandew/supertab
+[submodule "vimfiles/bundle/omnisharp-vim"]
+	path = vimfiles/bundle/omnisharp-vim
+	url = https://github.com/OmniSharp/omnisharp-vim.git
