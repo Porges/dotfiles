@@ -19,3 +19,9 @@
 [submodule "vimfiles/bundle/omnisharp-vim"]
 	path = vimfiles/bundle/omnisharp-vim
 	url = https://github.com/OmniSharp/omnisharp-vim.git
+[submodule "vimfiles/bundle/vim-dispatch"]
+	path = vimfiles/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
+[submodule "vimfiles/bundle/syntastic"]
+	path = vimfiles/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
