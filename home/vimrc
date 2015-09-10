@@ -43,6 +43,7 @@ set showcmd
 
 set hlsearch
 set incsearch
+set ignorecase
 set smartcase " ignore case unless some uppercase letters present
 
 set cursorline
@@ -82,3 +83,7 @@ set wildignore+=*\\bin\\*,*\\obj\\*,*\\objd\\*,*\\out\\*
 
 " Custom filetypes
 au Bufread,BufNewFile *.targets,*.props,*.proj setfiletype xml " Msbuild
+
+" OmniSharp settings
+let g:OmniSharp_selector_ui = 'ctrlp'
+
