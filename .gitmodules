@@ -16,3 +16,12 @@
 [submodule "vimfiles/bundle/supertab"]
 	path = vimfiles/bundle/supertab
 	url = https://github.com/ervandew/supertab
+[submodule "vimfiles/bundle/ghcmod-vim"]
+	path = vimfiles/bundle/ghcmod-vim
+	url = https://github.com/eagletmt/ghcmod-vim
+[submodule "vimfiles/bundle/syntastic"]
+	path = vimfiles/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic
+[submodule "vimfiles/bundle/vimproc.vim"]
+	path = vimfiles/bundle/vimproc.vim
+	url = https://github.com/Shougo/vimproc.vim.git
