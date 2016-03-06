@@ -20,7 +20,7 @@ set backspace=indent,eol,start
 set hidden
 
 if has("win32")
-    set guifont=Input:h9:cANSI
+    set guifont=Input:h10:cANSI
 endif
 
 set guioptions-=T
