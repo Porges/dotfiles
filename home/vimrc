@@ -20,7 +20,7 @@ set backspace=indent,eol,start
 set hidden
 
 if has("win32")
-    set guifont=Input:h9:cANSI
+    set guifont=Input:h10:cANSI
 endif
 
 set guioptions-=T
@@ -81,7 +81,8 @@ colorscheme xoria256
 
 
 " Ignore build output dirs (for both vim and ctrl-p)
-set wildignore+=*\\bin\\*,*\\obj\\*,*\\objd\\*,*\\out\\*
+set wildignore+=*\\bin\\*,*\\obj\\*,*\\objd\\*,*\\out\\*,*\\.git\\*,*.swp
+
 
 " Custom filetypes
 au Bufread,BufNewFile *.targets,*.props,*.proj setfiletype xml " Msbuild
