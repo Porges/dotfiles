@@ -74,6 +74,8 @@ set encoding=utf-8
 let g:airline_powerline_fonts=1
 set laststatus=2
 " show status always
+let g:airline#extensions#tabline#enabled = 1 "http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
+let g:airline#extensions#tabline#fnamemod = ':t'
 
 colorscheme xoria256
 
