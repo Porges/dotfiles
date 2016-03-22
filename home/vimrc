@@ -19,6 +19,8 @@ set backspace=indent,eol,start
 
 set hidden
 
+set vb " visual bell
+
 if has("win32")
     set guifont=Input:h10:cANSI
 endif
