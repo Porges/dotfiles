@@ -12,13 +12,10 @@
 	url = https://github.com/vim-scripts/xoria256.vim
 [submodule "vimfiles/bundle/ctrlp.vim"]
 	path = vimfiles/bundle/ctrlp.vim
-	url = https://github.com/kien/ctrlp.vim
+	url = https://github.com/ctrlpvim/ctrlp.vim
 [submodule "vimfiles/bundle/supertab"]
 	path = vimfiles/bundle/supertab
 	url = https://github.com/ervandew/supertab
-[submodule "vimfiles/bundle/omnisharp-vim"]
-	path = vimfiles/bundle/omnisharp-vim
-	url = https://github.com/OmniSharp/omnisharp-vim.git
 [submodule "vimfiles/bundle/vim-dispatch"]
 	path = vimfiles/bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
@@ -31,3 +28,6 @@
 [submodule "vimfiles/bundle/vimproc.vim"]
 	path = vimfiles/bundle/vimproc.vim
 	url = https://github.com/Shougo/vimproc.vim.git
+[submodule "vimfiles/bundle/neco-ghc"]
+	path = vimfiles/bundle/neco-ghc
+    url = https://github.com/eagletmt/neco-ghc.git 
