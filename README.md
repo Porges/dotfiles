@@ -10,7 +10,9 @@ Setup:
     cd dotfiles
 
 Linux:    
+
     make
     
 Windows (must run as administrator):
+
     install
