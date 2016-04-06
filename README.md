@@ -8,5 +8,9 @@ Setup:
     cd
     git clone --recursive https://github.com/Porges/dotfiles.git
     cd dotfiles
-    make
 
+Linux:    
+    make
+    
+Windows (must run as administrator):
+    install
