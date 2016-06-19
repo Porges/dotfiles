@@ -92,8 +92,8 @@ au Bufread,BufNewFile *.targets,*.props,*.proj setfiletype xml " Msbuild
 " OmniSharp settings
 let g:OmniSharp_selector_ui = 'ctrlp'
 
-" map leader to ,
-let mapleader=","
+" map leader to space 
+map <SPACE> <leader>
 
 " GHC-mod settings
 map <leader>tw :GhcModTypeInsert<CR>
