@@ -31,7 +31,10 @@ set guioptions-=T
 
 filetype plugin indent on
 syntax on
+
+" Flash matching paren when typed
 set showmatch
+set matchtime=1
 
 set mouse=a
 
@@ -55,7 +58,8 @@ set cursorline
 set number
 set nowrap
 
-set formatoptions+=n
+set textwidth=80
+set formatoptions+=tcoqnl1j
 
 " disable arrow keys
 noremap <Up> <NOP>
@@ -92,7 +96,7 @@ au Bufread,BufNewFile *.targets,*.props,*.proj setfiletype xml " Msbuild
 " OmniSharp settings
 let g:OmniSharp_selector_ui = 'ctrlp'
 
-" map leader to space 
+" map leader to space
 map <SPACE> <leader>
 
 " GHC-mod settings
