@@ -27,7 +27,14 @@ if has("win32")
     set guifont=Input:h10:cANSI
 endif
 
+" no toolbar, scrollbar, menubar
 set guioptions-=T
+set guioptions-=r
+set guioptions-=m
+
+" add tabline, only if at least 2 tabs
+set guioptions+=e
+set showtabline=1
 
 filetype plugin indent on
 syntax on
