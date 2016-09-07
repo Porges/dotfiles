@@ -46,3 +46,6 @@
 [submodule "vimfiles/bundle/tagbar"]
 	path = vimfiles/bundle/tagbar
 	url = https://github.com/majutsushi/tagbar
+[submodule "vimfiles/bundle/vim-sensible"]
+	path = vimfiles/bundle/vim-sensible
+	url = https://github.com/tpope/vim-sensible
