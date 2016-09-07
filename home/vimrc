@@ -15,18 +15,13 @@ endif
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
-set autoread     " reload files if changed outside and no changes inside
 set expandtab    " spaces for tabs
 set tabstop=4    " tab inserts this many
 set softtabstop=4
 set shiftwidth=4 " >> inserts this many
 set shiftround
-set smarttab
 
 set smartindent
-set autoindent
-
-set backspace=indent,eol,start
 
 set hidden
 
@@ -47,9 +42,6 @@ set guioptions-=m
 set guioptions+=e
 set showtabline=1
 
-filetype plugin indent on
-syntax on
-
 " Flash matching paren when typed
 set showmatch
 set matchtime=1
@@ -57,7 +49,6 @@ set matchtime=1
 set mouse=a
 
 set wildmode=longest:full,full
-set wildmenu
 set completeopt=longest,menuone
 set wildignorecase " ignore case for filenames
 
@@ -67,7 +58,6 @@ set splitright
 set showcmd
 
 set hlsearch
-set incsearch
 set ignorecase
 set smartcase " ignore case unless some uppercase letters present
 
@@ -77,7 +67,7 @@ set number
 set nowrap
 
 set textwidth=80
-set formatoptions+=nj
+set formatoptions+=n
 
 " disable arrow keys
 noremap <Up> <NOP>
@@ -98,7 +88,6 @@ let g:netrw_liststyle=3
 " Setup for airline
 set encoding=utf-8
 let g:airline_powerline_fonts=1
-set laststatus=2
 " show status always
 let g:airline#extensions#tabline#enabled = 1 "http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
 let g:airline#extensions#tabline#fnamemod = ':t'
@@ -141,3 +130,4 @@ autocmd FileType *
   \   call SuperTabChain(&omnifunc, '<c-p>') |
   \ endif
 
+" vim:set ft=vim et sw=2:
