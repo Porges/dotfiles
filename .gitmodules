@@ -27,7 +27,7 @@
 	url = https://github.com/Shougo/vimproc.vim.git
 [submodule "vimfiles/bundle/neco-ghc"]
 	path = vimfiles/bundle/neco-ghc
-    url = https://github.com/eagletmt/neco-ghc.git 
+	url = https://github.com/eagletmt/neco-ghc.git
 [submodule "vimfiles/bundle/vim-surround"]
 	path = vimfiles/bundle/vim-surround
 	url = git://github.com/tpope/vim-surround.git
