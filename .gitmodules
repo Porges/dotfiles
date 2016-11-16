@@ -67,3 +67,6 @@
 [submodule "vimfiles/bundle/vim-pencil"]
 	path = vimfiles/bundle/vim-pencil
 	url = https://github.com/reedes/vim-pencil
+[submodule "vimfiles/bundle/vim-markdown"]
+	path = vimfiles/bundle/vim-markdown
+	url = http://github.com/tpope/vim-markdown
