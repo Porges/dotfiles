@@ -128,6 +128,7 @@ autocmd BufWritePost *.hs GhcModCheckAndLintAsync
 
 " wrap the text in the error window
 autocmd FileType qf setlocal wrap
+
 " Haskell completion
 let g:haskellmode_completion_ghc = 0 " disable haskell-mode completion
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
@@ -152,6 +153,13 @@ augroup pencil
   autocmd!
   autocmd FileType markdown call pencil#init()
   autocmd FileType text call pencil#init()
+augroup END
+
+" lexical settings
+augroup lexical
+  autocmd!
+  autocmd FileType markdown call lexical#init()
+  autocmd FileType text call lexical#init()
 augroup END
 
 
