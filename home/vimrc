@@ -139,4 +139,13 @@ autocmd FileType *
   \   call SuperTabChain(&omnifunc, '<c-p>') |
   \ endif
 
+" TextObj-Quote settings
+augroup textobj_quote
+  autocmd!
+  autocmd FileType markdown call textobj#quote#init()
+  autocmd FileType textile call textobj#quote#init()
+  autocmd FileType text call textobj#quote#init({'educate': 0})
+augroup END
+
+
 " vim:set ft=vim et sw=2:

@@ -58,3 +58,6 @@
 [submodule "vimfiles/bundle/targets.vim"]
 	path = vimfiles/bundle/targets.vim
 	url = https://github.com/wellle/targets.vim.git
+[submodule "vimfiles/bundle/vim-textobj-quote"]
+	path = vimfiles/bundle/vim-textobj-quote
+	url = https://github.com/reedes/vim-textobj-quote
