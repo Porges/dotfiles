@@ -64,3 +64,6 @@
 [submodule "vimfiles/bundle/vim-textobj-sentence"]
 	path = vimfiles/bundle/vim-textobj-sentence
 	url = https://github.com/reedes/vim-textobj-sentence
+[submodule "vimfiles/bundle/vim-pencil"]
+	path = vimfiles/bundle/vim-pencil
+	url = https://github.com/reedes/vim-pencil

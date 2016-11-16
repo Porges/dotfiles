@@ -147,5 +147,12 @@ augroup textobj_quote
   autocmd FileType text call textobj#quote#init({'educate': 0})
 augroup END
 
+" pencil settings
+augroup pencil
+  autocmd!
+  autocmd FileType markdown call pencil#init()
+  autocmd FileType text call pencil#init()
+augroup END
+
 
 " vim:set ft=vim et sw=2:
