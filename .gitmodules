@@ -85,3 +85,6 @@
 [submodule "vimfiles/bundle/vim-gitgutter"]
 	path = vimfiles/bundle/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
+[submodule "vimfiles/bundle/vim-signature"]
+	path = vimfiles/bundle/vim-signature
+	url = https://github.com/kshenoy/vim-signature
