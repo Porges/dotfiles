@@ -133,7 +133,13 @@ autocmd FileType qf setlocal wrap
 let g:haskellmode_completion_ghc = 0 " disable haskell-mode completion
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 
-" SuperTab settings
+"" SuperTab settings
+
+" preselect first match
+let g:SuperTabLongestHighlight=1
+
+" enhanced 'longest' completion
+let g:SuperTabLongestEnhanced=1
 
 autocmd FileType *
   \ if &omnifunc != '' |
@@ -141,6 +147,7 @@ autocmd FileType *
   \ endif
 
 " TextObj-Quote settings
+
 augroup textobj_quote
   autocmd!
   autocmd FileType markdown call textobj#quote#init()
@@ -162,5 +169,22 @@ augroup lexical
   autocmd FileType text call lexical#init()
 augroup END
 
+"" Sneak settings
+
+"replace 'f' with 1-char Sneak
+nmap f <Plug>Sneak_f
+nmap F <Plug>Sneak_F
+xmap f <Plug>Sneak_f
+xmap F <Plug>Sneak_F
+omap f <Plug>Sneak_f
+omap F <Plug>Sneak_F
+
+"replace 't' with 1-char Sneak
+nmap t <Plug>Sneak_t
+nmap T <Plug>Sneak_T
+xmap t <Plug>Sneak_t
+xmap T <Plug>Sneak_T
+omap t <Plug>Sneak_t
+omap T <Plug>Sneak_T
 
 " vim:set ft=vim et sw=2:

@@ -73,3 +73,6 @@
 [submodule "vimfiles/bundle/vim-lexical"]
 	path = vimfiles/bundle/vim-lexical
 	url = https://github.com/reedes/vim-lexical
+[submodule "vimfiles/bundle/vim-sneak"]
+	path = vimfiles/bundle/vim-sneak
+	url = https://github.com/justinmk/vim-sneak
