@@ -83,9 +83,6 @@ autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
-" Set explorer to treeview by default
-let g:netrw_liststyle=3
-
 " Put VIM backup & swap files in different directories, not the current working
 " directory...
 set directory=~/.vim/tmp,.
@@ -191,6 +188,15 @@ xmap T <Plug>Sneak_T
 omap t <Plug>Sneak_t
 omap T <Plug>Sneak_T
 
+" don't need ; anymore (sneak has clever behaviour)
 nnoremap ; :
+
+"" Dirvish
+
+augroup dirvish_events
+  autocmd!
+  
+  autocmd FileType dirvish call fugitive#detect(@%)
+augroup END
 
 " vim:set ft=vim et sw=2:
