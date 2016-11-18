@@ -52,6 +52,16 @@ a plugin, then it’s listed in the plugin.
 
 `[yy`/`]yy`: C-string encode/decode line
 
+### [vim-gitgutter][]
+
+`]c`/`[c`: next/previous change
+
+`<leader>hp`: preview hunk
+
+`<leader>hs`: stage hunk
+
+`<leader>hu`: undo hunk
+
 ### [vim-lexical][]
 
 `]s`: next misspelled word
@@ -142,6 +152,10 @@ These accept `i` (inside), `a` (around), `I` (inside except whitespace), or `A`
 `,.;:+-=~_*#/|\&$`: all work as delimiters; e.g. `da,` deletes an item in
 a comma-separated list.
 
+### [vim-gitgutter][]
+
+`c`: hunk
+
 ### [vim-textobj-entire][]
 
 `ae`: entire file
@@ -175,3 +189,4 @@ asd
 [vim-textobj-sentence]: https://github.com/reedes/vim-textobj-sentence
 [vim-sensible]: https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
 [targets.vim]: https://github.com/wellle/targets.vim
+[vim-gitgutter]: https://github.com/airblade/vim-gitgutter
