@@ -82,3 +82,6 @@
 [submodule "vimfiles/bundle/vim-dirvish"]
 	path = vimfiles/bundle/vim-dirvish
 	url = https://github.com/justinmk/vim-dirvish
+[submodule "vimfiles/bundle/vim-gitgutter"]
+	path = vimfiles/bundle/vim-gitgutter
+	url = https://github.com/airblade/vim-gitgutter
