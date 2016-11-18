@@ -1,5 +1,7 @@
 set nocompatible
 
+set encoding=utf-8
+
 " ConEmu
 if !empty($CONEMUBUILD)
     set termencoding=utf-8
@@ -34,7 +36,8 @@ if has("win32")
     set renderoptions=type:directx
 endif
 
-set listchars="tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
+let &fillchars="vert:\u2502,fold:\u2508,diff:\u2593"
+let &listchars="tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
 
 " no toolbar, scrollbar, menubar, left scrollbar
 set guioptions-=T
@@ -96,7 +99,6 @@ set undofile
 set undodir=~/.vim/undo
 
 " Setup for airline
-set encoding=utf-8
 let g:airline_powerline_fonts=1
 " show status always
 let g:airline#extensions#tabline#enabled = 1 "http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
