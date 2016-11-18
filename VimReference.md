@@ -92,13 +92,11 @@ a plugin, then it’s listed in the plugin.
 * `<` or `>` or `a`: angle brackets
 * `'`: single quotes
 * `"`: double quotes
-* `````: backticks
+* `` ` ``: backticks
 * `q`: curly quotes (provided by vim-textobj-sentence)
 * `Q`: curly single quotes (provided by vim-textobj-sentence)
 * `t`: any HTML tag
 * `<tag>`: specific HTML tag
-
-###
 
 ## Motions
 
@@ -107,7 +105,7 @@ a plugin, then it’s listed in the plugin.
 ### [vim-textobj-sentence][]
 
 `(`/`)`: start of previous/next sentence
-`g(`/g`)`: end of previous/current sentence
+`g(`/`g)`: end of previous/current sentence
 
 ## Text objects
 
@@ -122,7 +120,7 @@ called out, this includes the delimiters.
 
 Targets.vim extends a lot of built-in objects to work more consistently. For
 example, you can say `ci(` while outside the parentheses and it will change the
-next occurence. Alternately you can prefix with a number (`2ci(`) to change the
+next occurrence. Alternately you can prefix with a number (`2ci(`) to change the
 outer pair of parentheses, when nested.
 
 These accept `i` (inside), `a` (around), `I` (inside except whitespace), or `A`
@@ -141,7 +139,8 @@ These accept `i` (inside), `a` (around), `I` (inside except whitespace), or `A`
 
 `a`: argument
 
-``,.;:+-=~_*#/|\&$``: delimters; e.g. `da,` deletes an item in a comma-separated list.
+`,.;:+-=~_*#/|\&$`: all work as delimiters; e.g. `da,` deletes an item in
+a comma-separated list.
 
 ### [vim-textobj-entire][]
 
