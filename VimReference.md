@@ -172,13 +172,9 @@ a comma-separated list.
 
 `s`: sentence
 
-### [targets.vim][]
-
-Asd
-
 ## Visual mode
 
-asd
+to-do..
 
 [supertab]: https://github.com/ervandew/supertab
 [vim-unimpaired]: https://github.com/tpope/vim-unimpaired
