@@ -31,6 +31,7 @@ set t_vb=
 
 if has("win32")
     set guifont=PragmataPro\ Mono:h11
+    set renderoptions=type:directx
 endif
 
 " no toolbar, scrollbar, menubar
@@ -101,7 +102,7 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1 "http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
 let g:airline#extensions#tabline#fnamemod = ':t'
 
-colorscheme xoria256
+colorscheme gruvbox
 
 " Use .gitignore file for ctrl-p
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -171,6 +172,9 @@ augroup END
 
 "" Sneak settings
 
+let g:sneak#s_next = 1
+let g:sneak#streak = 1
+
 "replace 'f' with 1-char Sneak
 nmap f <Plug>Sneak_f
 nmap F <Plug>Sneak_F
@@ -186,5 +190,7 @@ xmap t <Plug>Sneak_t
 xmap T <Plug>Sneak_T
 omap t <Plug>Sneak_t
 omap T <Plug>Sneak_T
+
+nnoremap ; :
 
 " vim:set ft=vim et sw=2:
