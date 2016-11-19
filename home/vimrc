@@ -198,12 +198,19 @@ omap T <Plug>Sneak_T
 " don't need ; anymore (sneak has clever behaviour)
 nnoremap ; :
 
+" make Y consistent with D etc
+noremap Y y$
+
 "" Dirvish
 
 augroup dirvish_events
   autocmd!
-
   autocmd FileType dirvish call fugitive#detect(@%)
 augroup END
+
+"" Signature
+" Use git-gutter to highlight mark locations
+let g:SignatureMarkTextHLDynamic=1
+let g:SignatureMarkerTextHLDynamic=1
 
 " vim:set ft=vim et sw=2:
