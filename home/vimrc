@@ -2,17 +2,6 @@ set nocompatible
 
 set encoding=utf-8
 
-" ConEmu
-if !empty($CONEMUBUILD)
-    set termencoding=utf-8
-    set term=xterm
-    set t_Co=256
-    let &t_AB="\e[48;5;%dm"
-    let &t_AF="\e[38;5;%dm"
-    inoremap <Char-0x07F> <BS>
-    nnoremap <Char-0x07F> <BS>
-endif
-
 " Enable pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
@@ -121,9 +110,6 @@ set wildignore+=*\\bin\\*,*\\obj\\*,*\\objd\\*,*\\out\\*,*.swp
 " Custom filetypes
 au Bufread,BufNewFile *.targets,*.props,*.proj setfiletype xml " Msbuild
 
-" OmniSharp settings
-let g:OmniSharp_selector_ui = 'ctrlp'
-
 " map leader to space
 map <SPACE> <leader>
 
@@ -145,7 +131,7 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 "" SuperTab settings
 
 " preselect first match
-let g:SuperTabLongestHighlight=1
+let g:SuperTabLongestHighlight=0 " broken at the moment
 
 " enhanced 'longest' completion
 let g:SuperTabLongestEnhanced=1
