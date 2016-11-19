@@ -36,6 +36,9 @@ if has("win32")
     set renderoptions=type:directx
 endif
 
+" no extra space between lines (this defaults to 1 on win32)
+set linespace=0
+
 let &fillchars="vert:\u2502,fold:\u2508,diff:\u2593"
 let &listchars="tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
 
