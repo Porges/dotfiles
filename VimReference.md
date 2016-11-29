@@ -84,9 +84,15 @@ a plugin, then it’s listed in the plugin.
 
 `1z=`: use first suggestion
 
+### [vim-commentary][]
+
+`gc{motion}`: **c**omment
+
+`gcc`: comment/uncomment this line
+
 ### [vim-surround][]
 
-`ysTX`: **y**ou **s**urround text object *T* with *X*
+`ys{motion}X`: **y**ou **s**urround with *X*
 
 `yssX`: **y**ou **s**urround current line with *X*
 
@@ -152,6 +158,10 @@ These accept `i` (inside), `a` (around), `I` (inside except whitespace), or `A`
 `,.;:+-=~_*#/|\&$`: all work as delimiters; e.g. `da,` deletes an item in
 a comma-separated list.
 
+### [vim-commentary][]
+
+`gc`: comment
+
 ### [vim-gitgutter][]
 
 `c`: hunk
@@ -186,3 +196,4 @@ to-do..
 [vim-sensible]: https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
 [targets.vim]: https://github.com/wellle/targets.vim
 [vim-gitgutter]: https://github.com/airblade/vim-gitgutter
+[vim-commentary]: https://github.com/tpope/vim-commentary.git
