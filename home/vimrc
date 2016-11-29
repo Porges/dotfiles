@@ -135,7 +135,7 @@ autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 "" SuperTab settings
 
 " preselect first match
-let g:SuperTabLongestHighlight=0 " broken at the moment
+let g:SuperTabLongestHighlight=1
 
 " enhanced 'longest' completion
 let g:SuperTabLongestEnhanced=1
