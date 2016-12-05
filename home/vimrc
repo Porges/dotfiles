@@ -195,6 +195,9 @@ nnoremap ; :
 " make Y consistent with D etc
 noremap Y y$
 
+" Ctrl-J splits line
+nnoremap <C-J> i<CR><ESC>
+
 "" Dirvish
 
 augroup dirvish_events
