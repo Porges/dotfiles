@@ -31,6 +31,10 @@ set linespace=0
 let &fillchars="vert:\u2502,fold:\u2508,diff:\u2593"
 let &listchars="tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
 
+set breakindent " indent wrapped lines, and...
+set breakindentopt=shift:4,sbr " indent them another level and show 'showbreak'
+set showbreak=↪
+
 " no toolbar, scrollbar, menubar, left scrollbar
 set guioptions-=T
 set guioptions-=m
