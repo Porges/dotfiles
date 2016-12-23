@@ -88,3 +88,6 @@
 [submodule "vimfiles/bundle/vim-signature"]
 	path = vimfiles/bundle/vim-signature
 	url = https://github.com/kshenoy/vim-signature
+[submodule "vimfiles/bundle/editorconfig-vim"]
+	path = vimfiles/bundle/editorconfig-vim
+	url = https://github.com/editorconfig/editorconfig-vim
