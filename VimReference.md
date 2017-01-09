@@ -109,8 +109,8 @@ a plugin, then it’s listed in the plugin.
 * `'`: single quotes
 * `"`: double quotes
 * `` ` ``: backticks
-* `q`: curly quotes (provided by vim-textobj-sentence)
-* `Q`: curly single quotes (provided by vim-textobj-sentence)
+* `q`: curly quotes (provided by vim-textobj-quote)
+* `Q`: curly single quotes (provided by vim-textobj-quote)
 * `t`: any HTML tag
 * `<tag>`: specific HTML tag
 
