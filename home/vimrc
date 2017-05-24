@@ -23,7 +23,7 @@ set t_vb=
 
 if has("win32")
     set guifont=PragmataPro\ Mono:h11
-    set renderoptions=type:directx
+    "set renderoptions=type:directx
 endif
 
 " no extra space between lines (this defaults to 1 on win32)
