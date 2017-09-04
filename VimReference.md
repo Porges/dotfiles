@@ -164,7 +164,7 @@ a comma-separated list.
 
 ### [vim-gitgutter][]
 
-`c`: hunk
+`c`: hunk (**c**hange)
 
 ### [vim-textobj-entire][]
 
