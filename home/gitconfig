@@ -7,3 +7,5 @@
 	fscache = true
 [branch]
 	autosetuprebase = always
+[merge]
+	conflictstyle = diff3
