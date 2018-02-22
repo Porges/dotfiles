@@ -218,8 +218,8 @@ endif
 " make Y consistent with D etc
 noremap Y y$
 
-" help: how to do this with Ctrl-6 directly?
-nnoremap <Backspace> :e #<CR>
+" backspace goes back to last file
+nnoremap <Backspace> <c-^>
 
 " Ctrl-J splits line
 nnoremap <C-J> i<CR><ESC>
