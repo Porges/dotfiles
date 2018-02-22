@@ -98,6 +98,9 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1 "http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
 let g:airline#extensions#tabline#fnamemod = ':t'
 
+" Since we're using airline we don't need to show the mode at the bottom
+set noshowmode
+
 let g:airline_section_x = '%{PencilMode()}'
 
 colorscheme gruvbox
