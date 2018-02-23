@@ -47,9 +47,8 @@ set showmatch
 set matchtime=1
 
 set mouse=a
-
 set wildmode=longest:full,full
-set completeopt=longest,menuone
+set completeopt=menuone,preview
 set wildignorecase " ignore case for filenames
 
 set splitbelow
@@ -98,6 +97,9 @@ let g:airline_powerline_fonts=1
 " show status always
 let g:airline#extensions#tabline#enabled = 1 "http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
 let g:airline#extensions#tabline#fnamemod = ':t'
+
+" Since we're using airline we don't need to show the mode at the bottom
+set noshowmode
 
 let g:airline_section_x = '%{PencilMode()}'
 
@@ -216,8 +218,8 @@ endif
 " make Y consistent with D etc
 noremap Y y$
 
-" help: how to do this with Ctrl-6 directly?
-nnoremap <Backspace> :e #<CR>
+" backspace goes back to last file
+nnoremap <Backspace> <c-^>
 
 " Ctrl-J splits line
 nnoremap <C-J> i<CR><ESC>
