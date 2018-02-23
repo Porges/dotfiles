@@ -227,6 +227,7 @@ nnoremap <C-J> i<CR><ESC>
 augroup dirvish_events
   au!
   au FileType dirvish call fugitive#detect(@%)
+  au FileType dirvish silent! lcd %:p:h
 augroup END
 
 "" Signature
