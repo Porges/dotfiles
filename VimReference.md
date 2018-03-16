@@ -162,9 +162,13 @@ a comma-separated list.
 
 `gc`: comment
 
+### [vim-textobj-comment][]
+
+`c`: comment
+
 ### [vim-gitgutter][]
 
-`c`: hunk (**c**hange)
+`h`: hunk (changed from default of `c`)
 
 ### [vim-textobj-entire][]
 
@@ -196,4 +200,5 @@ to-do..
 [vim-sensible]: https://github.com/tpope/vim-sensible/blob/master/plugin/sensible.vim
 [targets.vim]: https://github.com/wellle/targets.vim
 [vim-gitgutter]: https://github.com/airblade/vim-gitgutter
+[vim-textobj-comment]: https://github.com/glts/vim-textobj-comment
 [vim-commentary]: https://github.com/tpope/vim-commentary.git
