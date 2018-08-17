@@ -27,7 +27,6 @@ set linespace=0
 
 let &fillchars="vert:\u2502,fold:\u2508,diff:\u2593"
 let &listchars="tab:\u21e5 ,trail:\u2423,extends:\u21c9,precedes:\u21c7,nbsp:\u00b7"
-
 set breakindent " indent wrapped lines, and...
 set breakindentopt=shift:4,sbr " indent them another level and show 'showbreak'
 set showbreak=↪
@@ -104,6 +103,7 @@ set noshowmode
 let g:airline_section_x = '%{PencilMode()}'
 
 colorscheme gruvbox
+set bg=dark
 
 " Use .gitignore file for ctrl-p
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -120,6 +120,9 @@ augroup END
 " map leader to space
 map <SPACE> <leader>
 
+" set shell to powershell (for :terminal)
+set shell powershell.exe
+
 " GHC-mod settings
 map <leader>tw :GhcModTypeInsert<CR>
 map <leader>ts :GhcModSplitFunCase<CR>
@@ -128,7 +131,7 @@ map <leader>te :GhcModTypeClear<CR>
 
 augroup CheckHaskellOnSave
   au!
-  au BufWritePost *.hs GhcModCheckAndLintAsync
+  "au BufWritePost *.hs GhcModCheckAndLintAsync
 augroup END
 
 augroup WrapTextInErrorWindow
@@ -140,7 +143,7 @@ augroup END
 let g:haskellmode_completion_ghc = 0 " disable haskell-mode completion
 augroup SetHaskellOmniFunc
   au!
-  au FileType haskell setlocal omnifunc=necoghc#omnifunc
+  "au FileType haskell setlocal omnifunc=necoghc#omnifunc
 augroup END
 
 "" SuperTab settings
