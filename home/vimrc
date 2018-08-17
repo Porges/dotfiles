@@ -239,4 +239,12 @@ augroup END
 let g:SignatureMarkTextHLDynamic=1
 let g:SignatureMarkerTextHLDynamic=1
 
+" fix conflict between git-gutter and textobj-comment
+let g:gitgutter_map_keys = 0
+omap ih <Plug>GitGutterTextObjectInnerPending
+omap ah <Plug>GitGutterTextObjectOuterPending
+xmap ih <Plug>GitGutterTextObjectInnerVisual
+xmap ah <Plug>GitGutterTextObjectOuterVisual
+
+
 " vim:set ft=vim et sw=2:
