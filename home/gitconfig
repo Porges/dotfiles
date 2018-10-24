@@ -8,4 +8,9 @@
 [branch]
 	autosetuprebase = always
 [merge]
-	conflictstyle = diff3
+	conflictStyle = diff3
+[fetch]
+	prune = true
+	pruneTags = true
+[diff]
+	algorithm = histogram
