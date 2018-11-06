@@ -121,7 +121,7 @@ augroup END
 map <SPACE> <leader>
 
 " set shell to powershell (for :terminal)
-set shell=powershell.exe
+"   set shell=powershell.exe
 
 " GHC-mod settings
 map <leader>tw :GhcModTypeInsert<CR>
