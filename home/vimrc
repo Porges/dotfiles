@@ -17,6 +17,8 @@ set hidden
 set vb " visual bell
 set t_vb=
 
+set lazyredraw " don't redraw during macros, etc
+
 if has("win32")
     set guifont=PragmataPro\ Mono:h11
     "set renderoptions=type:directx
@@ -120,8 +122,11 @@ augroup END
 " map leader to space
 map <SPACE> <leader>
 
-" set shell to powershell (for :terminal)
-"   set shell=powershell.exe
+" insert date (ISO8601)
+map <leader>id :put =strftime('%Y-%m-%d')<CR>
+
+" insert timestamp (ISO8601)
+map <leader>it :put =strftime('%Y-%m-%dT%T')<CR>
 
 " GHC-mod settings
 map <leader>tw :GhcModTypeInsert<CR>
@@ -189,6 +194,11 @@ augroup END
 
 let g:markdown_fenced_languages = ['html', 'haskell', 'python', 'bash=sh']
 
+" Surround - j for single and J for double Japanese square quotes
+
+let g:surround_106 = "「\r」"
+let g:surround_74 = "『\r』"
+
 "" Sneak settings
 
 let g:sneak#s_next = 1
@@ -227,6 +237,9 @@ nnoremap <Backspace> <c-^>
 " Ctrl-J splits line
 nnoremap <C-J> i<CR><ESC>
 
+" gp selects last paste
+nnoremap gp `[v`]
+
 "" Dirvish
 
 augroup dirvish_events
@@ -245,6 +258,10 @@ omap ih <Plug>GitGutterTextObjectInnerPending
 omap ah <Plug>GitGutterTextObjectOuterPending
 xmap ih <Plug>GitGutterTextObjectInnerVisual
 xmap ah <Plug>GitGutterTextObjectOuterVisual
-
+nmap [h <Plug>GitGutterPrevHunk
+nmap ]h <Plug>GitGutterNextHunk
+nmap <Leader>hp <Plug>GitGutterPreviewHunk
+nmap <Leader>hs <Plug>GitGutterStageHunk
+nmap <Leader>hu <Plug>GitGutterUndoHunk
 
 " vim:set ft=vim et sw=2:
