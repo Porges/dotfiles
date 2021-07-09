@@ -1,16 +1,19 @@
-[user]
-	email = porges@porg.es
-	name = George Pollard
-[core]
-	editor = vim
-	preloadindex = true
-	fscache = true
 [branch]
 	autosetuprebase = always
-[merge]
-	conflictStyle = diff3
+[diff]
+	algorithm = histogram
 [fetch]
 	prune = true
 	pruneTags = true
-[diff]
-	algorithm = histogram
+[init]
+	defaultBranch = main
+[merge]
+	conflictStyle = diff3
+[pull]
+	rebase = merges
+[push]
+	default = upstream
+[rebase]
+	autosquash = true
+[submodule]
+	recurse = true

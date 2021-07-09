@@ -1,4 +1,3 @@
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -7,8 +6,3 @@ alias l='ls -CF'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
-
-# preserve colour codes
-alias less='less -r'
-
-alias ls='ls --color=always'
