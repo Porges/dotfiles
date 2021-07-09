@@ -1,5 +1,7 @@
 #!/bin/sh
 
-for x in home/*; do
-    ln -s "$x" "$HOME/.$x"
+BASEDIR=$(dirname $0)
+
+for x in $BASEDIR/home/*; do
+    ln -s "$x" "$HOME/.$(basename $x)"
 done
