@@ -1,6 +1,6 @@
 #!/bin/sh
 
-BASEDIR=$(dirname $0)
+BASEDIR=$(dirname $(realpath "${BASH_SOURCE:-$0}"))
 
 for x in $BASEDIR/home/*; do
     ln -s "$x" "$HOME/.$(basename $x)"
