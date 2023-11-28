@@ -53,8 +53,8 @@ require("lazy").setup({
   },
 })
 
-vim.keymap.set('n', 'j', 'gj')
-vim.keymap.set('n', 'k', 'gk')
+vim.keymap.set('n', 'j', 'gj', {remap=true})
+vim.keymap.set('n', 'k', 'gk', {remap=true})
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
