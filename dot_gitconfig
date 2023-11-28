@@ -1,3 +1,7 @@
+[user]
+	name = George Pollard
+[credential]
+	helper = wincred
 [branch]
 	autosetuprebase = always
 [diff]
