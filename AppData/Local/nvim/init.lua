@@ -13,16 +13,17 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   {
-    "kylechui/nvim-surround",
-    version = "*", -- Use for stability; omit to use `main` branch for the latest features
-    event = "VeryLazy",
+    "tpope/vim-repeat"
+  },
+  {
+    "tpope/vim-surround"
+  },
+  {
+    "ggandor/leap.nvim",
     config = function()
-        require("nvim-surround").setup({
-            -- Configuration here, or leave empty to use defaults
-        })
+      require("leap").create_default_mappings()
     end
   },
-  
   { 
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
@@ -43,6 +44,8 @@ require("lazy").setup({
             ["if"] = "@function.inner",
             ["ac"] = "@class.outer",
             ["ic"] = "@class.inner",
+            ["aa"] = "@parameter.outer",
+            ["ia"] = "@parameter.inner",
           },
         },
       },
@@ -58,3 +61,5 @@ vim.keymap.set('n', 'k', 'gk', {remap=true})
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+
+vim.opt.background = 'light'
