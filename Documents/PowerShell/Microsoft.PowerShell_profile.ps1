@@ -4,18 +4,24 @@ if ($host.Name -eq 'ConsoleHost')
 
     Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
     Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
+    Set-PSReadLineKeyHandler -Key Tab -Function MenuComplete
 
     Set-PSReadLineOption -HistorySearchCursorMovesToEnd
+    Set-PSReadLineOption -PredictionSource HistoryAndPlugin
+    # Set-PSReadLineOption -PredictionViewStyle ListView # use F2 to switch
 
     # function prompt { "$pwd> " }`
     # Set-PSReadLineOption -PromptText '> ', 'X ' 
 
-    # oh-my-posh init pwsh | Invoke-Expression
-    # oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/jandedobbeleer.omp.json" | Invoke-Expression
-
+    oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/catppuccin.omp.json" | Invoke-Expression
 
     Set-PSReadLineKeyHandler -Chord Enter -Function ValidateAndAcceptLine
+    
+    if ($null -ne (Get-Command rustup -ErrorAction SilentlyContinue)) {
+        rustup completions powershell | Out-String | Invoke-Expression
+    }
 }
+
 
 function OneFuzz-Repro($jobId) {
     Push-Location ~/Downloads
