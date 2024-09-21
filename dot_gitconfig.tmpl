@@ -9,15 +9,19 @@
 	helper = wincred
 [branch]
 	autosetuprebase = always
+	sort = -committerdate
 [diff]
 	algorithm = histogram
+	submodule = log
 [fetch]
 	prune = true
 	pruneTags = true
+[help]
+	autocorrect = prompt
 [init]
 	defaultBranch = main
 [merge]
-	conflictStyle = diff3
+	conflictStyle = zdiff3
 [pull]
 	rebase = merges
 [push]
@@ -25,5 +29,7 @@
 	autoSetupRemote = true
 [rebase]
 	autosquash = true
+[status]
+	submoduleSummary = true
 [submodule]
 	recurse = true
