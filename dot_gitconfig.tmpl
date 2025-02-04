@@ -33,3 +33,15 @@
 	submoduleSummary = true
 [submodule]
 	recurse = true
+
+{{- if eq .chezmoi.hostname "gpollard-pc" }}
+{{- else }}
+[gpg]
+       format = ssh
+[gpg "ssh"]
+       program = C:\\Users\\porge\\AppData\\Local\\1Password\\app\\8\\op-ssh-sign.exe
+[commit]
+       gpgsign = true
+[user]
+       signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMnUoj0bvqi+m0cZsAtuuAIe9xxVvMXf/u5osHHwZQP8
+{{- end }}

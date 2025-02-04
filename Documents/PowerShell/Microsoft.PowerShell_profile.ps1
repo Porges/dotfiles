@@ -31,3 +31,6 @@ function OneFuzz-Repro($jobId) {
     onefuzz debug logs get --job_id $jobId
     Pop-Location
 }
+
+# Assume programs print UTF-8 (default $OutputEncoding)
+[System.Console]::OutputEncoding = $OutputEncoding
