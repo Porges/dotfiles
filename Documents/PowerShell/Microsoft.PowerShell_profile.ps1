@@ -13,8 +13,9 @@ if ($host.Name -eq 'ConsoleHost')
     # function prompt { "$pwd> " }`
     # Set-PSReadLineOption -PromptText '> ', 'X '
 
-    $ompTheme = Resolve-Path $PSScriptRoot/catppuuccin-mod.omp.json
-    oh-my-posh init pwsh --config $ompTheme | Invoke-Expression
+    # oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/catppuccin.omp.json" | Invoke-Expression
+    $env:STARSHIP_CONFIG = "$HOME/.config/starship.toml"
+    Invoke-Expression (&starship init powershell)
 
     Set-PSReadLineKeyHandler -Chord Enter -Function ValidateAndAcceptLine
 
