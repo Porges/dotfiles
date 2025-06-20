@@ -78,4 +78,9 @@ if has_vscode then
 
   vim.keymap.set('n', ']h', vscode_action('workbench.action.editor.nextChange'))
   vim.keymap.set('n', '[h', vscode_action('workbench.action.editor.previousChange'))
+
+  vim.keymap.set('n', '<Leader>bb', vscode_action('bookmarks.toggle'))
+  vim.keymap.set('n', ']b', vscode_action('bookmarks.jumpToNext'))
+  vim.keymap.set('n', '[b', vscode_action('bookmarks.jumpToPrevious'))
+  vim.keymap.set('n', 'gb', vscode_action('bookmarks.list'))
 end
