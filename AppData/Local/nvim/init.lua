@@ -24,7 +24,7 @@ require("lazy").setup({
       require("leap").create_default_mappings()
     end
   },
-  { 
+  {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
@@ -63,3 +63,19 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.background = 'light'
+
+local has_vscode,vscode = pcall(require, 'vscode')
+if has_vscode then
+  local function vscode_action(cmd)
+    return function() vscode.action(cmd) end
+  end
+
+  vim.keymap.set('n', ']d', vscode_action('editor.action.marker.next'))
+  vim.keymap.set('n', '[d', vscode_action('editor.action.marker.prev'))
+
+  vim.keymap.set('n', 'gr', vscode_action('editor.action.goToReferences'))
+  vim.keymap.set('n', 'gf', vscode_action('editor.action.openLink'))
+
+  vim.keymap.set('n', ']h', vscode_action('workbench.action.editor.nextChange'))
+  vim.keymap.set('n', '[h', vscode_action('workbench.action.editor.previousChange'))
+end
