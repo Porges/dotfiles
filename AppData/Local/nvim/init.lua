@@ -72,6 +72,13 @@ if has_vscode then
 
   vim.keymap.set('n', ']d', vscode_action('editor.action.marker.next'))
   vim.keymap.set('n', '[d', vscode_action('editor.action.marker.prev'))
+  vim.keymap.set('n', ']D', vscode_action('editor.action.marker.nextInFiles'))
+  vim.keymap.set('n', '[D', vscode_action('editor.action.marker.prevInFiles'))
+
+  vim.keymap.set('n', ']e', vscode_action('go-to-next-error.next.error'))
+  vim.keymap.set('n', '[e', vscode_action('go-to-next-error.prev.error'))
+  vim.keymap.set('n', ']E', vscode_action('go-to-next-error.nextInFiles.error'))
+  vim.keymap.set('n', '[E', vscode_action('go-to-next-error.prevInFiles.error'))
 
   vim.keymap.set('n', 'gr', vscode_action('editor.action.goToReferences'))
   vim.keymap.set('n', 'gf', vscode_action('editor.action.openLink'))
