@@ -1,0 +1,27 @@
+$schema: https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2023/08/config/document.json
+metadata:
+  winget:
+    processor:
+      identifier: "dscv3"
+resources:
+- name: winget_fzf
+  type: Microsoft.WinGet/Package
+  metadata:
+    description: Install fzf
+  properties:
+    id: "junegunn.fzf"
+    source: winget
+- name: winget_starship
+  type: Microsoft.WinGet/Package
+  metadata:
+    description: Install starship
+  properties:
+    id: "Starship.Starship"
+    source: winget
+- name: winget_zoxide
+  type: Microsoft.WinGet/Package
+  metadata:
+    description: Install zoxide
+  properties:
+    id: "oxfist.zoxide"
+    source: winget
