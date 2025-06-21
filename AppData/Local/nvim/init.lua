@@ -82,6 +82,8 @@ if has_vscode then
 
   vim.keymap.set('n', 'gr', vscode_action('editor.action.goToReferences'))
   vim.keymap.set('n', 'gf', vscode_action('editor.action.openLink'))
+  -- gd is 'goto definition'
+  vim.keymap.set('n', 'gp', vscode_action('editor.action.peekDefinition'))
 
   vim.keymap.set('n', ']h', vscode_action('workbench.action.editor.nextChange'))
   vim.keymap.set('n', '[h', vscode_action('workbench.action.editor.previousChange'))
@@ -90,4 +92,7 @@ if has_vscode then
   vim.keymap.set('n', ']b', vscode_action('bookmarks.jumpToNext'))
   vim.keymap.set('n', '[b', vscode_action('bookmarks.jumpToPrevious'))
   vim.keymap.set('n', 'gb', vscode_action('bookmarks.list'))
+
+  -- hunk stage
+  vim.keymap.set('n', '<Leader>hs', vscode_action('git.stageSelectedRanges'))
 end
