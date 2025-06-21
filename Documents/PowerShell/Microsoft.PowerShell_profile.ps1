@@ -10,17 +10,15 @@ if ($host.Name -eq 'ConsoleHost')
     Set-PSReadLineOption -PredictionSource HistoryAndPlugin
     # Set-PSReadLineOption -PredictionViewStyle ListView # use F2 to switch
 
-    # function prompt { "$pwd> " }`
-    # Set-PSReadLineOption -PromptText '> ', 'X '
-
     # oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/catppuccin.omp.json" | Invoke-Expression
     $env:STARSHIP_CONFIG = "$HOME/.config/starship.toml"
     Invoke-Expression (&starship init powershell)
+    Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
     Set-PSReadLineKeyHandler -Chord Enter -Function ValidateAndAcceptLine
 
     if ($null -ne (Get-Command rustup -ErrorAction SilentlyContinue)) {
-        rustup completions powershell | Out-String | Invoke-Expression
+        Invoke-Expression (rustup completions powershell | Out-String)
     }
 }
 
