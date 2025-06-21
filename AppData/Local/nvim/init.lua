@@ -1,3 +1,5 @@
+-- cSpell: enableCompoundWords
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -19,9 +21,18 @@ require("lazy").setup({
     "tpope/vim-surround"
   },
   {
+    "wellle/targets.vim"
+  },
+  {
     "ggandor/leap.nvim",
     config = function()
       require("leap").create_default_mappings()
+    end
+  },
+  {
+    "ggandor/flit.nvim",
+    config = function()
+      require("flit").setup()
     end
   },
   {
@@ -31,38 +42,97 @@ require("lazy").setup({
     opts = {
       ensure_installed = {
         "c_sharp",
+        "json",
+        "jsonc",
         "rust",
         "python",
         "yaml",
       },
       textobjects = {
-        select = {
+        move = {
           enable = true,
-          lookahead = true,
-          keymaps = {
-            ["af"] = "@function.outer",
-            ["if"] = "@function.inner",
-            ["ac"] = "@class.outer",
-            ["ic"] = "@class.inner",
-            ["aa"] = "@parameter.outer",
-            ["ia"] = "@parameter.inner",
+          goto_next_start = {
+            ["]f"] = "@function.outer",
+            ["]c"] = "@class.outer",
+            ["]a"] = "@parameter.inner",
           },
-        },
+          goto_next_end = {
+            ["]F"] = "@function.outer",
+            ["]C"] = "@class.outer",
+            ["]A"] = "@parameter.inner",
+          },
+          goto_previous_start = {
+            ["[f"] = "@function.outer",
+            ["[c"] = "@class.outer",
+            ["[a"] = "@parameter.inner",
+          },
+          goto_previous_end = {
+            ["[F"] = "@function.outer",
+            ["[C"] = "@class.outer",
+            ["[A"] = "@parameter.inner",
+          },
+        }
       },
     },
     config = function(_, opts)
       require("nvim-treesitter.configs").setup(opts)
     end
   },
+  {
+    "echasnovski/mini.ai",
+    event = "VeryLazy",
+    opts = function()
+      local ai = require("mini.ai")
+      return {
+        custom_textobjects = {
+          a = ai.gen_spec.treesitter({ a = "@parameter.outer", i = "@parameter.inner" }),
+          f = ai.gen_spec.treesitter({ a = "@function.outer", i = "@function.inner" }),
+          c = ai.gen_spec.treesitter({ a = "@class.outer", i = "@class.inner" }),
+          o = ai.gen_spec.treesitter({
+            a = { "@block.outer", "@conditional.outer", "@loop.outer" },
+            i = { "@block.inner", "@conditional.inner", "@loop.inner" },
+          }),
+        },
+      }
+    end,
+    config = function(_, opts)
+      require("mini.ai").setup(opts)
+    end,
+  },
+  {
+    "echasnovski/mini.operators",
+    config = function(_, opts)
+      require("mini.operators").setup(opts)
+    end,
+  },
+  {
+    "echasnovski/mini.splitjoin",
+    config = function(_, opts)
+      require("mini.splitjoin").setup(opts)
+    end,
+  },
+  {
+    "echasnovski/mini.align",
+    config = function(_, opts)
+      require("mini.align").setup(opts)
+    end,
+  }
 })
 
-vim.keymap.set('n', 'j', 'gj', {remap=true})
-vim.keymap.set('n', 'k', 'gk', {remap=true})
+local opt = vim.opt
+opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"
+opt.ignorecase = true
+opt.smartcase = true
+opt.background = 'light'
 
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
+local km = vim.keymap
+-- let jk work when word wrapping is enabled
+km.set('n', 'j', 'gj', {remap=true})
+km.set('n', 'k', 'gk', {remap=true})
 
-vim.opt.background = 'light'
+-- when indenting in visual mode, stay in visual mode
+km.set("v", "<", "<gv")
+km.set("v", ">", ">gv")
 
 local has_vscode,vscode = pcall(require, 'vscode')
 if has_vscode then
@@ -70,29 +140,33 @@ if has_vscode then
     return function() vscode.action(cmd) end
   end
 
-  vim.keymap.set('n', ']d', vscode_action('editor.action.marker.next'))
-  vim.keymap.set('n', '[d', vscode_action('editor.action.marker.prev'))
-  vim.keymap.set('n', ']D', vscode_action('editor.action.marker.nextInFiles'))
-  vim.keymap.set('n', '[D', vscode_action('editor.action.marker.prevInFiles'))
+  -- go to diagnostics
+  km.set('n', ']d', vscode_action('editor.action.marker.next'))
+  km.set('n', '[d', vscode_action('editor.action.marker.prev'))
+  km.set('n', ']D', vscode_action('editor.action.marker.nextInFiles'))
+  km.set('n', '[D', vscode_action('editor.action.marker.prevInFiles'))
 
-  vim.keymap.set('n', ']e', vscode_action('go-to-next-error.next.error'))
-  vim.keymap.set('n', '[e', vscode_action('go-to-next-error.prev.error'))
-  vim.keymap.set('n', ']E', vscode_action('go-to-next-error.nextInFiles.error'))
-  vim.keymap.set('n', '[E', vscode_action('go-to-next-error.prevInFiles.error'))
+  -- go to errors
+  km.set('n', ']e', vscode_action('go-to-next-error.next.error'))
+  km.set('n', '[e', vscode_action('go-to-next-error.prev.error'))
+  km.set('n', ']E', vscode_action('go-to-next-error.nextInFiles.error'))
+  km.set('n', '[E', vscode_action('go-to-next-error.prevInFiles.error'))
 
-  vim.keymap.set('n', 'gr', vscode_action('editor.action.goToReferences'))
-  vim.keymap.set('n', 'gf', vscode_action('editor.action.openLink'))
+  km.set('n', 'gr', vscode_action('editor.action.goToReferences'))
+  km.set('n', 'gf', vscode_action('editor.action.openLink'))
   -- gd is 'goto definition'
-  vim.keymap.set('n', 'gp', vscode_action('editor.action.peekDefinition'))
+  km.set('n', 'gp', vscode_action('editor.action.peekDefinition'))
 
-  vim.keymap.set('n', ']h', vscode_action('workbench.action.editor.nextChange'))
-  vim.keymap.set('n', '[h', vscode_action('workbench.action.editor.previousChange'))
+  -- go to changes (hunks)
+  km.set('n', ']h', vscode_action('workbench.action.editor.nextChange'))
+  km.set('n', '[h', vscode_action('workbench.action.editor.previousChange'))
 
-  vim.keymap.set('n', '<Leader>bb', vscode_action('bookmarks.toggle'))
-  vim.keymap.set('n', ']b', vscode_action('bookmarks.jumpToNext'))
-  vim.keymap.set('n', '[b', vscode_action('bookmarks.jumpToPrevious'))
-  vim.keymap.set('n', 'gb', vscode_action('bookmarks.list'))
+  -- bookmarks
+  km.set('n', '<Leader>bb', vscode_action('bookmarks.toggle'))
+  km.set('n', ']b', vscode_action('bookmarks.jumpToNext'))
+  km.set('n', '[b', vscode_action('bookmarks.jumpToPrevious'))
+  km.set('n', 'gb', vscode_action('bookmarks.list'))
 
   -- hunk stage
-  vim.keymap.set('n', '<Leader>hs', vscode_action('git.stageSelectedRanges'))
+  km.set('n', '<Leader>hs', vscode_action('git.stageSelectedRanges'))
 end
