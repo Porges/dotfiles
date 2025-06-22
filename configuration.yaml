@@ -23,5 +23,5 @@ resources:
   metadata:
     description: Install zoxide
   properties:
-    id: "oxfist.zoxide"
+    id: "ajeetdsouza.zoxide"
     source: winget
