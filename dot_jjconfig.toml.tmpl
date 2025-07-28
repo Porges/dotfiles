@@ -1,0 +1,19 @@
+"$schema" = "https://jj-vcs.github.io/jj/latest/config-schema.json"
+
+[user]
+name = "George Pollard"
+{{- if eq .chezmoi.hostname "gpollard-pc" }}
+email = "gpollard@microsoft.com"
+{{- else }}
+email = "porges@porg.es"
+{{- end }}
+
+[revsets]
+log = '@ | ancestors(trunk()..(visible_heads() & mine()), 2) | trunk()'
+
+[ui]
+default-command = "log"
+editor = "code.cmd -w"
+
+[revset-aliases]
+HEAD = "@"
