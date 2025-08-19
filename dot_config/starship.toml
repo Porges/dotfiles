@@ -12,11 +12,29 @@ success_symbol = "[[󰄛](green) ❯](peach)"
 error_symbol = "[[󰄛](red) ❯](peach)"
 vimcmd_symbol = "[󰄛 ❮](subtext1)" # For use with zsh-vi-mode
 
-[cmd_duration]
-show_notifications = true
-
 [git_branch]
 style = "bold mauve"
+disabled = true
+
+[git_commit]
+disabled = true
+
+[git_metrics]
+disabled = true
+
+[git_status]
+disabled = true
+
+[custom.jj]
+command = "prompt"
+format = "$output"
+ignore_timeout = true
+shell = ["starship-jj", "--ignore-working-copy", "starship"]
+use_stdin = false
+when = true
+
+[cmd_duration]
+show_notifications = true
 
 [directory]
 truncation_length = 4
