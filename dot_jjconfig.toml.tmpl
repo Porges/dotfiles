@@ -9,7 +9,7 @@ email = "porges@porg.es"
 {{- end }}
 
 [revsets]
-log = '@ | ancestors(trunk()..(visible_heads() & mine()), 2) | trunk()'
+log = 'present(@) | ancestors(trunk()..(visible_heads() & mine()), 2) | present(trunk())'
 
 [ui]
 default-command = "log"
@@ -17,3 +17,14 @@ editor = "code.cmd -w"
 
 [revset-aliases]
 HEAD = "@"
+
+[git]
+push-new-bookmarks = true
+private-commits = "description(glob:'wip:*') | description(glob:'private:*')"
+
+[template-aliases]
+'format_short_signature(signature)' = 'signature.email().local()'
+'format_timestamp(timestamp)' = 'timestamp.ago()'
+
+[working-copy]
+eol-conversion = "input-output"
