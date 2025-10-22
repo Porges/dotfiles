@@ -165,7 +165,8 @@ if has_vscode then
   km.set('n', '<Leader>bb', vscode_action('bookmarks.toggle'))
   km.set('n', ']b', vscode_action('bookmarks.jumpToNext'))
   km.set('n', '[b', vscode_action('bookmarks.jumpToPrevious'))
-  km.set('n', 'gb', vscode_action('bookmarks.list'))
+  km.set('n', 'gb', vscode_action('bookmarks.listFromAllFiles'))
+  km.set('n', 'gB', vscode_action('bookmarks.list'))
 
   -- hunk stage
   km.set('n', '<Leader>hs', vscode_action('git.stageSelectedRanges'))
