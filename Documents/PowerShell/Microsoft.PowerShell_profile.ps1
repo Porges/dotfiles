@@ -21,6 +21,10 @@ if ($host.Name -eq 'ConsoleHost')
         Invoke-Expression (rustup completions powershell | Out-String)
     }
 
+    if ($null -ne (Get-Command jj -ErrorAction SilentlyContinue)) {
+        Invoke-Expression (jj util completion power-shell | Out-String)
+    }
+
     # imported last so it doesn't override the prompt
     # I only want it for completions
     Import-Module posh-git
