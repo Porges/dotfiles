@@ -14,9 +14,6 @@ log = 'present(@) | ancestors(trunk()..(visible_heads() & mine()), 2) | present(
 [ui]
 default-command = "log"
 editor = "code.cmd -w"
-# delta requires :git format
-pager = "delta"
-diff-formatter = ":git"
 
 [aliases]
 # ideas from: https://github.com/fei6409/dotfiles/blob/bce1db7613e555ecb339d6ce16a186fcd6f666e7/jjconfig.toml
@@ -38,3 +35,11 @@ private-commits = "description(glob:'wip:*') | description(glob:'private:*')"
 
 [working-copy]
 eol-conversion = "input-output"
+
+# use delta as pager for diff and show
+[[--scope]]
+--when.commands = ["diff", "show"]
+[--scope.ui]
+# delta requires :git format
+pager = "delta"
+diff-formatter = ":git"
