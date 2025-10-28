@@ -25,3 +25,10 @@ resources:
   properties:
     id: "ajeetdsouza.zoxide"
     source: winget
+- name: winget_delta
+  type: Microsoft.WinGet/Package
+  metadata:
+    description: Install Delta
+  properties:
+    id: "dandavison.delta"
+    source: winget
