@@ -18,6 +18,12 @@ editor = "code.cmd -w"
 pager = "delta"
 diff-formatter = ":git"
 
+[aliases]
+# ideas from: https://github.com/fei6409/dotfiles/blob/bce1db7613e555ecb339d6ce16a186fcd6f666e7/jjconfig.toml
+# 'retrunk'
+rt = ["rebase", "-d", "trunk()"]
+# 'tug' = pull nearest bookmark up
+tug = ["bookmark", "move", "--from", "exactly(heads(::@- & bookmarks()), 1)", "--to", "@-"]
 
 [revset-aliases]
 HEAD = "@"
