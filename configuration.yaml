@@ -32,3 +32,10 @@ resources:
   properties:
     id: "dandavison.delta"
     source: winget
+- name: winget_bat
+  type: Microsoft.WinGet/Package
+  metadata:
+    description: Install Delta
+  properties:
+    id: "sharkdp.bat"
+    source: winget
