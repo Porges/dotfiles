@@ -1,10 +1,6 @@
 [user]
 	name = George Pollard
-{{- if eq .chezmoi.hostname "gpollard-pc" }}
-	email = "gpollard@microsoft.com"
-{{- else }}
-	email = "porges@porg.es"
-{{- end }}
+	email = {{ .email | quote }}
 [credential]
 	helper = wincred
 [branch]
