@@ -79,7 +79,7 @@ require("lazy").setup({
     end
   },
   {
-    "echasnovski/mini.ai",
+    "nvim-mini/mini.ai",
     event = "VeryLazy",
     opts = function()
       local ai = require("mini.ai")
@@ -100,19 +100,19 @@ require("lazy").setup({
     end,
   },
   {
-    "echasnovski/mini.operators",
+    "nvim-mini/mini.operators",
     config = function(_, opts)
       require("mini.operators").setup(opts)
     end,
   },
   {
-    "echasnovski/mini.splitjoin",
+    "nvim-mini/mini.splitjoin",
     config = function(_, opts)
       require("mini.splitjoin").setup(opts)
     end,
   },
   {
-    "echasnovski/mini.align",
+    "nvim-mini/mini.align",
     config = function(_, opts)
       require("mini.align").setup(opts)
     end,
