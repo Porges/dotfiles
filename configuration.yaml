@@ -1,41 +1,113 @@
-$schema: https://raw.githubusercontent.com/PowerShell/DSC/main/schemas/2023/08/config/document.json
-metadata:
-  winget:
-    processor:
-      identifier: "dscv3"
-resources:
-- name: winget_fzf
-  type: Microsoft.WinGet/Package
-  metadata:
-    description: Install fzf
-  properties:
-    id: "junegunn.fzf"
-    source: winget
-- name: winget_starship
-  type: Microsoft.WinGet/Package
-  metadata:
-    description: Install starship
-  properties:
-    id: "Starship.Starship"
-    source: winget
-- name: winget_zoxide
-  type: Microsoft.WinGet/Package
-  metadata:
-    description: Install zoxide
-  properties:
-    id: "ajeetdsouza.zoxide"
-    source: winget
-- name: winget_delta
-  type: Microsoft.WinGet/Package
-  metadata:
-    description: Install Delta
-  properties:
-    id: "dandavison.delta"
-    source: winget
-- name: winget_bat
-  type: Microsoft.WinGet/Package
-  metadata:
-    description: Install Delta
-  properties:
-    id: "sharkdp.bat"
-    source: winget
+# yaml-language-server: $schema=https://aka.ms/configuration-dsc-schema/0.2
+properties:
+  configurationVersion: 0.2.0
+  assertions:
+    - resource: Microsoft.Windows.Developer/OsVersion
+      directives:
+        description: Verify min OS version requirement
+        allowPrerelease: true
+      settings:
+        MinVersion: '10.0.22000'
+  resources:
+    - resource: Microsoft.Windows.Settings/WindowsSettings
+      directives:
+        description: Enable Developer Mode
+        allowPrerelease: true
+        securityContext: elevated
+      settings:
+        DeveloperMode: true
+    - resource: Microsoft.Windows.Developer/Taskbar
+      id: config.windows.taskbar
+      directives:
+        allowPrerelease: true
+        securityContext: elevated
+      settings:
+        SearchboxMode: Hide
+        TaskViewButton: Hide
+        WidgetsButton: Hide
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: winget_fzf
+      directives:
+        description: Install fzf
+      settings:
+        id: junegunn.fzf
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: winget_vscode
+      directives:
+        description: Install VS Code
+      settings:
+        id: Microsoft.VisualStudioCode
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: winget_starship
+      directives:
+        description: Install Starship
+        securityContext: elevated
+      settings:
+        id: Starship.Starship
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: winget_zoxide
+      directives:
+        description: Install zoxide
+      settings:
+        id: ajeetdsouza.zoxide
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: winget_delta
+      directives:
+        description: Install delta
+      settings:
+        id: dandavison.delta
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: winget_bat
+      directives:
+        description: Install bat
+      settings:
+        id: sharkdp.bat
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: winget_git
+      directives:
+        description: Install git
+        securityContext: elevated
+      settings:
+        id: Git.Git
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: winget_jj
+      directives:
+        description: Install jj
+      settings:
+        id: jj-vcs.jj
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: winget_jbmono
+      directives:
+        description: Install JetBrains Mono NerdFont
+      settings:
+        id: DEVCOM.JetBrainsMonoNerdFont
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: winget_neovim
+      directives:
+        description: Install Neovim
+      settings:
+        id: Neovim.Neovim
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: winget_powershell
+      directives:
+        description: Install PowerShell
+      settings:
+        id: Microsoft.PowerShell
+        source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: office365
+      directives:
+        description: Install Office 365
+      settings:
+        id: Microsoft.Office
+        source: winget
