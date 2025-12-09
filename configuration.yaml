@@ -111,3 +111,10 @@ properties:
       settings:
         id: Microsoft.Office
         source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: azcli
+      directives:
+        description: Install Az-CLI
+      settings:
+        id: Microsoft.AzureCLI
+        source: winget
