@@ -118,3 +118,10 @@ properties:
       settings:
         id: Microsoft.AzureCLI
         source: winget
+    - resource: Microsoft.WinGet.DSC/WinGetPackage
+      id: nodejs
+      directives:
+        description: Install NodeJS
+      settings:
+        id: OpenJS.NodeJS
+        source: winget
