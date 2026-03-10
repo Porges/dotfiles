@@ -12,7 +12,10 @@ if ($host.Name -eq 'ConsoleHost')
 
     # oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH/catppuccin.omp.json" | Invoke-Expression
     $env:STARSHIP_CONFIG = "$HOME/.config/starship.toml"
+    function Invoke-Starship-TransientFunction { "`e[38;2;245;169;127m❯ " } # same as "peach" in starship config
     Invoke-Expression (&starship init powershell)
+    Enable-TransientPrompt
+
     Invoke-Expression (& { (zoxide init powershell | Out-String) })
 
     Set-PSReadLineKeyHandler -Chord Enter -Function ValidateAndAcceptLine
@@ -28,16 +31,6 @@ if ($host.Name -eq 'ConsoleHost')
     # imported last so it doesn't override the prompt
     # I only want it for completions
     Import-Module posh-git
-}
-
-
-function OneFuzz-Repro($jobId) {
-    Push-Location ~/Downloads
-    mkdir $jobId
-    Set-Location $jobId
-    onefuzz containers download_job $jobId
-    onefuzz debug logs get --job_id $jobId
-    Pop-Location
 }
 
 # Assume programs print UTF-8 (default $OutputEncoding)
