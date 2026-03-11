@@ -6,49 +6,37 @@
         {
             "command": 
             {
-                "action": "copy",
-                "singleLine": false
+                "action": "sendInput",
+                "input": "\u001b\r"
             },
-            "id": "User.copy.644BA8F2"
-        },
-        {
-            "command": "paste",
-            "id": "User.paste"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
-            },
-            "id": "User.splitPane.A6751878"
-        },
-        {
-            "command": "find",
-            "id": "User.find"
+            "id": "User.sendInput.8F63D3A9"
         }
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
     "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "firstWindowPreference": "persistedWindowLayout",
     "keybindings": 
     [
         {
-            "id": "User.copy.644BA8F2",
+            "id": null,
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": "User.sendInput.8F63D3A9",
+            "keys": "shift+enter"
+        },
+        {
+            "id": null,
             "keys": "ctrl+c"
         },
         {
-            "id": "User.paste",
+            "id": null,
             "keys": "ctrl+v"
         },
         {
-            "id": "User.find",
+            "id": null,
             "keys": "ctrl+shift+f"
-        },
-        {
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+shift+d"
         }
     ],
     "newTabMenu": 
@@ -85,7 +73,6 @@
                 "experimental.retroTerminalEffect": true,
                 "font": 
                 {
-                    "builtinGlyphs": true,
                     "face": "Berkeley Mono",
                     "size": 14
                 },
@@ -113,27 +100,15 @@
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "guid": "{ac3ce0d8-7810-5ca7-b3cf-ab83c100f019}",
                 "hidden": false,
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
-                "hidden": false,
-                "name": "Ubuntu",
-                "source": "CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc"
-            },
-            {
-                "guid": "{5053dd62-5afd-5ab0-a03d-586b504fce06}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2022",
+                "name": "Developer Command Prompt for VS 18",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
-                "guid": "{a1ad273b-7f4a-5cc6-8cf9-e136142ac53c}",
+                "guid": "{b12c3970-ea2a-5107-93e3-65f84eb5add3}",
                 "hidden": false,
-                "name": "Developer PowerShell for VS 2022",
+                "name": "Developer PowerShell for VS 18",
                 "source": "Windows.Terminal.VisualStudio"
             },
             {
@@ -143,58 +118,10 @@
                 "source": "VSDebugConsole"
             },
             {
-                "guid": "{23fc4185-7ee5-576d-9c5a-d7af7cdd5975}",
-                "hidden": true,
-                "name": "Developer Command Prompt for VS 2019",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{880ff4da-1c77-5551-a6cb-4433bc70b67f}",
-                "hidden": true,
-                "name": "Developer PowerShell for VS 2019",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{ab788368-0394-56d5-bc62-4130323c864a}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2022 [Preview]",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{30f131c5-d317-54d6-8ef3-133671710960}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022 [Preview]",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
                 "guid": "{2ece5bfe-50ed-5f3a-ab87-5cd4baafed2b}",
                 "hidden": false,
                 "name": "Git Bash",
                 "source": "Git"
-            },
-            {
-                "guid": "{7190cf27-21b4-520a-bf97-a85e2d229f7f}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{020a248f-b427-516b-94db-33614b5e52ab}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{5cfc770a-c11a-5d3e-a59a-6848a97f55e7}",
-                "hidden": false,
-                "name": "Developer Command Prompt for VS 18 [Preview]",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{7d3cc5ed-d9f1-5158-a74b-83546d26c1aa}",
-                "hidden": false,
-                "name": "Developer PowerShell for VS 18 [Preview]",
-                "source": "Windows.Terminal.VisualStudio"
             },
             {
                 "guid": "{17bf3de4-5353-5709-bcf9-835bd952a95e}",
