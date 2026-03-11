@@ -11,18 +11,18 @@ log = 'present(@) | ancestors(trunk()..(visible_heads() & mine()), 2) | present(
 default-command = "log"
 editor = "code.cmd -w"
 
+[templates]
+log = "builtin_log_oneline"
+
 [aliases]
-# ideas from: https://github.com/fei6409/dotfiles/blob/bce1db7613e555ecb339d6ce16a186fcd6f666e7/jjconfig.toml
-# 'retrunk'
-rt = ["rebase", "-d", "trunk()"]
-# 'tug' = pull nearest bookmark up
-tug = ["bookmark", "move", "--from", "exactly(heads(::@- & bookmarks()), 1)", "--to", "@-"]
+b = ["bookmark"]
+rt = ["rebase", "-d", "trunk()"] # 'retrunk' https://github.com/fei6409/dotfiles/blob/bce1db7613e555ecb339d6ce16a186fcd6f666e7/jjconfig.toml
+l = ["log", "-r", "ancestors(trunk()..@ | trunk(), 2)", "-T", "builtin_log_comfortable"]
 
 [revset-aliases]
 HEAD = "@"
 
 [git]
-push-new-bookmarks = true
 private-commits = "description(glob:'wip:*') | description(glob:'private:*')"
 
 [template-aliases]
