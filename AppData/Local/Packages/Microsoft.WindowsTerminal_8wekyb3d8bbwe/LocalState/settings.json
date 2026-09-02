@@ -35,12 +35,12 @@
     "keybindings":
     [
         {
-            "id": null,
-            "keys": "alt+shift+d"
-        },
-        {
             "id": "User.sendInput.8F63D3A9",
             "keys": "shift+enter"
+        },
+        {
+            "id": null,
+            "keys": "alt+shift+d"
         },
         {
             "id": null,
@@ -53,6 +53,7 @@
         {
             "id": "User.paste",
             "keys": "ctrl+v"
+
         },
         {
             "id": "User.splitPane.A6751878",
@@ -156,6 +157,7 @@
                 "source": "CanonicalGroupLimited.Ubuntu22.04LTS_79rhkp1fndgsc"
             },
             {
+
                 "guid": "{b32a4589-6389-54a1-9a3a-9743a2c07124}",
                 "hidden": false,
                 "name": "Developer Command Prompt for VS 18 [Preview]",
@@ -166,6 +168,12 @@
                 "hidden": false,
                 "name": "Developer PowerShell for VS 18 [Preview]",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{822a2376-2a66-5ece-b541-197e97204e36}",
+                "hidden": false,
+                "name": "Ubuntu-24.04",
+                "source": "Microsoft.WSL"
             }
         ]
     },

@@ -170,4 +170,7 @@ if has_vscode then
 
   -- hunk stage
   km.set('n', '<Leader>hs', vscode_action('git.stageSelectedRanges'))
+
+  -- window options
+  km.set('n', '<Leader>wo', vscode_action('workbench.action.closeOtherEditors'))
 end
